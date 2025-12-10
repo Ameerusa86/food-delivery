@@ -192,3 +192,79 @@ export const restaurants: RestaurantWithMenu[] = [
 ];
 
 export const featuredRestaurants: Restaurant[] = restaurants.slice(0, 3);
+
+// --- Orders mock data ---
+
+export type OrderStatus =
+  | "placed"
+  | "preparing"
+  | "on_the_way"
+  | "delivered"
+  | "cancelled";
+
+export type OrderItem = {
+  id: string;
+  name: string;
+  quantity: number;
+  price: number;
+};
+
+export type Order = {
+  id: string;
+  restaurantName: string;
+  status: OrderStatus;
+  placedAt: string; // ISO datetime string or simple date
+  total: number;
+  items: OrderItem[];
+  eta?: string;
+};
+
+export const mockOrders: Order[] = [
+  {
+    id: "1001",
+    restaurantName: "Mario's Pizza",
+    status: "delivered",
+    placedAt: "2025-12-08T18:45:00Z",
+    total: 32.48,
+    eta: "Delivered",
+    items: [
+      { id: "margherita", name: "Margherita", quantity: 1, price: 14.5 },
+      { id: "garlic-knots", name: "Garlic Knots", quantity: 1, price: 5.99 },
+      { id: "cola", name: "Cola (can)", quantity: 2, price: 1.99 },
+    ],
+  },
+  {
+    id: "1002",
+    restaurantName: "Spice Route",
+    status: "on_the_way",
+    placedAt: "2025-12-09T19:10:00Z",
+    total: 27.5,
+    eta: "10–15 min",
+    items: [
+      { id: "samosa", name: "Vegetable Samosas", quantity: 1, price: 5.5 },
+      { id: "chana-masala", name: "Chana Masala", quantity: 2, price: 11.0 },
+    ],
+  },
+  {
+    id: "1003",
+    restaurantName: "Green Bowl",
+    status: "preparing",
+    placedAt: "2025-12-10T13:25:00Z",
+    total: 18.5,
+    eta: "20–25 min",
+    items: [
+      {
+        id: "mediterranean-bowl",
+        name: "Mediterranean Bowl",
+        quantity: 1,
+        price: 13.5,
+      },
+      {
+        id: "classic-caesar",
+        name: "Classic Caesar",
+        quantity: 1,
+        price: 5.0,
+      },
+    ],
+  },
+];
