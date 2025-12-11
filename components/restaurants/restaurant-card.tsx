@@ -23,7 +23,7 @@ export function RestaurantCard({ restaurant }: Props) {
         />
         <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         <div className="absolute left-3 top-3 flex items-center gap-2">
-          <Badge className="bg-foreground text-background text-xs font-semibold shadow-lg border-0">
+          <Badge className="bg-primary text-primary-foreground text-xs font-semibold shadow-lg border-0">
             <svg
               className="h-3 w-3 mr-1"
               fill="none"

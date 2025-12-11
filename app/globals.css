@@ -171,4 +171,9 @@
   button {
     @apply transition-colors duration-200;
   }
+
+  /* Text color utilities */
+  .text-primary {
+    @apply text-primary;
+  }
 }
