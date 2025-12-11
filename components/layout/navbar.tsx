@@ -18,6 +18,28 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/components/ui/sheet";
+import { useCart } from "@/lib/cart-store";
+
+/**
+ * Cart button with badge, defined at the module level
+ * so it isn't created during render.
+ */
+function CartButton({ className = "" }: { className?: string }) {
+  const { itemCount } = useCart();
+
+  return (
+    <Link href="/cart" className={`relative inline-flex ${className}`}>
+      <Button variant="ghost" size="icon">
+        <ShoppingBag className="h-5 w-5" />
+      </Button>
+      {itemCount > 0 && (
+        <span className="absolute -right-1 -top-1 flex h-4 min-w-[16px] items-center justify-center rounded-full bg-primary text-[10px] font-semibold text-primary-foreground">
+          {itemCount > 9 ? "9+" : itemCount}
+        </span>
+      )}
+    </Link>
+  );
+}
 
 export function Navbar() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -51,6 +73,9 @@ export function Navbar() {
             <Link href="/help" className="hover:text-foreground">
               Help
             </Link>
+            <Link href="/contact" className="hover:text-foreground">
+              Contact
+            </Link>
           </nav>
         </div>
 
@@ -78,20 +103,12 @@ export function Navbar() {
             <Button size="sm" onClick={() => setIsRegisterOpen(true)}>
               Sign up
             </Button>
-            <Link href="/cart">
-              <Button variant="ghost" size="icon">
-                <ShoppingBag className="h-5 w-5" />
-              </Button>
-            </Link>
+            <CartButton />
           </div>
 
           {/* Mobile buttons */}
           <div className="flex items-center gap-2 md:hidden">
-            <Link href="/cart">
-              <Button variant="ghost" size="icon">
-                <ShoppingBag className="h-5 w-5" />
-              </Button>
-            </Link>
+            <CartButton />
             <Button
               variant="outline"
               size="icon"
@@ -124,7 +141,10 @@ export function Navbar() {
               About
             </Link>
             <Link href="/help" onClick={() => setIsMobileOpen(false)}>
-              Help
+              Help & FAQ
+            </Link>
+            <Link href="/contact" onClick={() => setIsMobileOpen(false)}>
+              Contact
             </Link>
           </nav>
           <div className="mt-6 flex flex-col gap-2">
