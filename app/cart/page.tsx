@@ -11,7 +11,7 @@ export default function CartPage() {
   const hasItems = items.length > 0;
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-12 lg:px-8 space-y-8">
+    <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8 space-y-8">
       <div className="flex items-center justify-between">
         <h1 className="text-3xl font-bold tracking-tight">Shopping cart</h1>
         {hasItems && (

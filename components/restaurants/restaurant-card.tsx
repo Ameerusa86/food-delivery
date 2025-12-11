@@ -46,12 +46,12 @@ export function RestaurantCard({ restaurant }: Props) {
           )}
         </div>
       </div>
-      <div className="space-y-3 px-4 py-4">
+      <div className="space-y-4 px-4 py-5">
         <div className="flex items-start justify-between gap-2">
-          <h3 className="font-bold text-base leading-tight line-clamp-1 group-hover:text-primary transition-colors">
+          <h3 className="font-bold text-base leading-snug line-clamp-1 group-hover:text-primary transition-colors">
             {restaurant.name}
           </h3>
-          <div className="flex items-center gap-1 shrink-0 bg-primary/10 px-2 py-1 rounded-lg">
+          <div className="flex items-center gap-1.5 shrink-0 bg-primary/10 px-2.5 py-1 rounded-lg">
             <svg
               className="h-3.5 w-3.5 text-primary"
               fill="currentColor"
@@ -67,7 +67,7 @@ export function RestaurantCard({ restaurant }: Props) {
         <p className="line-clamp-2 text-sm text-muted-foreground leading-relaxed">
           {restaurant.description}
         </p>
-        <div className="flex items-center justify-between pt-2 border-t text-sm">
+        <div className="flex items-center justify-between gap-3 pt-3 border-t text-sm">
           <span className="font-medium text-muted-foreground">
             {restaurant.cuisine}
           </span>

@@ -1,7 +1,7 @@
 // app/terms/page.tsx
 export default function TermsPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10 space-y-6 text-sm">
+    <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8 space-y-8 text-sm">
       <div className="space-y-2">
         <h1 className="text-3xl font-semibold tracking-tight">Terms of Use</h1>
         <p className="text-sm text-muted-foreground">

@@ -31,7 +31,7 @@ function statusLabel(status: string) {
 
 export default function OrdersPage() {
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8 space-y-6">
+    <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8 space-y-8">
       <div className="space-y-1">
         <h1 className="text-2xl font-semibold tracking-tight">Your orders</h1>
         <p className="text-sm text-muted-foreground">
@@ -39,12 +39,12 @@ export default function OrdersPage() {
         </p>
       </div>
 
-      <div className="space-y-3">
+      <div className="space-y-4">
         {mockOrders.map((order) => (
           <Link
             key={order.id}
             href={`/orders/${order.id}`}
-            className="flex items-center justify-between gap-3 rounded-2xl border bg-card p-4 text-sm hover:border-primary/40"
+            className="flex items-center justify-between gap-4 rounded-2xl border bg-card p-6 text-sm hover:border-primary/40 transition-colors"
           >
             <div className="space-y-1">
               <p className="font-medium">

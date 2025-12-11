@@ -27,7 +27,7 @@ export default function CheckoutPage() {
   };
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-8 space-y-6">
+    <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8 space-y-8">
       <div className="space-y-1">
         <h1 className="text-2xl font-semibold tracking-tight">Checkout</h1>
         <p className="text-sm text-muted-foreground">
@@ -47,27 +47,27 @@ export default function CheckoutPage() {
       )}
 
       {hasItems && (
-        <div className="grid gap-6 md:grid-cols-[2fr,1.2fr]">
+        <div className="grid gap-8 md:grid-cols-[2fr,1.2fr]">
           {/* Left column: form */}
           <form
-            className="space-y-4 rounded-2xl border bg-card p-4"
+            className="space-y-6 rounded-2xl border bg-card p-6"
             onSubmit={handleSubmit}
           >
-            <div className="space-y-1">
+            <div className="space-y-2">
               <h2 className="text-sm font-semibold">Contact</h2>
               <p className="text-xs text-muted-foreground">
                 We&apos;ll use this to contact you about your delivery.
               </p>
             </div>
-            <div className="grid gap-3 md:grid-cols-2">
-              <div className="space-y-1 text-xs">
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="space-y-2 text-xs">
                 <label className="font-medium">First name</label>
                 <input
                   required
                   className="w-full rounded-md border bg-background px-3 py-2 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 />
               </div>
-              <div className="space-y-1 text-xs">
+              <div className="space-y-2 text-xs">
                 <label className="font-medium">Last name</label>
                 <input
                   required
@@ -75,7 +75,7 @@ export default function CheckoutPage() {
                 />
               </div>
             </div>
-            <div className="space-y-1 text-xs">
+            <div className="space-y-2 text-xs">
               <label className="font-medium">Phone number</label>
               <input
                 required
@@ -83,7 +83,7 @@ export default function CheckoutPage() {
                 className="w-full rounded-md border bg-background px-3 py-2 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
               />
             </div>
-            <div className="space-y-1 text-xs">
+            <div className="space-y-2 text-xs">
               <label className="font-medium">Email</label>
               <input
                 required
@@ -92,17 +92,17 @@ export default function CheckoutPage() {
               />
             </div>
 
-            <div className="pt-2 space-y-2">
+            <div className="pt-4 space-y-3">
               <h2 className="text-sm font-semibold">Delivery address</h2>
-              <div className="space-y-1 text-xs">
+              <div className="space-y-2 text-xs">
                 <label className="font-medium">Street address</label>
                 <input
                   required
                   className="w-full rounded-md border bg-background px-3 py-2 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 />
               </div>
-              <div className="grid gap-3 md:grid-cols-3">
-                <div className="space-y-1 text-xs">
+              <div className="grid gap-4 md:grid-cols-3">
+                <div className="space-y-2 text-xs">
                   <label className="font-medium">City</label>
                   <input
                     required
@@ -126,12 +126,12 @@ export default function CheckoutPage() {
               </div>
             </div>
 
-            <div className="pt-2 space-y-2">
+            <div className="pt-4 space-y-3">
               <h2 className="text-sm font-semibold">Payment</h2>
               <p className="text-xs text-muted-foreground">
                 This is just UI for now—no real charges will be made.
               </p>
-              <div className="space-y-1 text-xs">
+              <div className="space-y-2 text-xs">
                 <label className="font-medium">Card number</label>
                 <input
                   required
@@ -139,8 +139,8 @@ export default function CheckoutPage() {
                   className="w-full rounded-md border bg-background px-3 py-2 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                 />
               </div>
-              <div className="grid gap-3 md:grid-cols-3">
-                <div className="space-y-1 text-xs">
+              <div className="grid gap-4 md:grid-cols-3">
+                <div className="space-y-2 text-xs">
                   <label className="font-medium">Expiry</label>
                   <input
                     required
@@ -148,7 +148,7 @@ export default function CheckoutPage() {
                     className="w-full rounded-md border bg-background px-3 py-2 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                   />
                 </div>
-                <div className="space-y-1 text-xs">
+                <div className="space-y-2 text-xs">
                   <label className="font-medium">CVC</label>
                   <input
                     required
@@ -156,7 +156,7 @@ export default function CheckoutPage() {
                     className="w-full rounded-md border bg-background px-3 py-2 text-xs focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
                   />
                 </div>
-                <div className="space-y-1 text-xs">
+                <div className="space-y-2 text-xs">
                   <label className="font-medium">Name on card</label>
                   <input
                     required
@@ -172,7 +172,7 @@ export default function CheckoutPage() {
           </form>
 
           {/* Right column: summary */}
-          <aside className="space-y-4 rounded-2xl border bg-card p-4 text-sm">
+          <aside className="space-y-6 rounded-2xl border bg-card p-6 text-sm h-fit sticky top-24">
             <h2 className="text-sm font-semibold">Order summary</h2>
             <div className="space-y-2">
               {items.map((item) => (

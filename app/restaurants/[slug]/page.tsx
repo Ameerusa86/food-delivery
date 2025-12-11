@@ -18,7 +18,7 @@ export default async function RestaurantDetailPage({ params }: Props) {
   }
 
   return (
-    <div className="mx-auto max-w-5xl px-4 py-6 space-y-6">
+    <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8 space-y-8">
       <header className="space-y-2 border-b pb-4">
         <h1 className="text-2xl font-semibold">{restaurant.name}</h1>
         <p className="text-sm text-muted-foreground">
