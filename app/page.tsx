@@ -3,6 +3,7 @@ import { featuredRestaurants } from "@/lib/dummy-data";
 import { RestaurantCard } from "@/components/restaurants/restaurant-card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function HomePage() {
   return (
@@ -115,9 +116,16 @@ export default function HomePage() {
             </div>
 
             <div className="flex-1 w-full max-w-lg">
-              <div className="relative aspect-square w-full">
-                <div className="absolute inset-0 rounded-3xl bg-linear-to-br from-primary/20 via-orange-200/40 to-yellow-200/40 shadow-2xl shadow-primary/20 backdrop-blur-sm" />
-                <div className="absolute inset-4 rounded-2xl bg-linear-to-br from-primary/10 via-orange-100/30 to-yellow-100/30" />
+              <div className="relative aspect-square w-full rounded-3xl p-4 bg-linear-to-br from-primary/15 via-orange-200/30 to-yellow-200/30 shadow-2xl shadow-primary/20">
+                <div className="relative w-full h-full overflow-hidden rounded-2xl">
+                  <Image
+                    src="/Images/hero.jpg"
+                    alt="Delicious food delivery"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
               </div>
             </div>
           </div>
