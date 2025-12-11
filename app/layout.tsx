@@ -5,6 +5,7 @@ import "./globals.css";
 import { CartProvider } from "@/lib/cart-store";
 import { Navbar } from "@/components/ui/layout/navbar";
 import { Footer } from "@/components/ui/layout/footer";
+import { LoadingPage } from "@/components/loading-page";
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
       <body
         className={`${plusJakarta.className} ${plusJakarta.variable} ${inter.variable} min-h-screen bg-background text-foreground`}
       >
+        <LoadingPage />
         <CartProvider>
           <div className="flex min-h-screen flex-col">
             <Navbar />
