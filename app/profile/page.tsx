@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export default function ProfilePage() {
   return (
-    <div className="mx-auto max-w-4xl px-4 py-8 space-y-6">
+    <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8 space-y-8">
       <div className="space-y-1">
         <h1 className="text-2xl font-semibold tracking-tight">Profile</h1>
         <p className="text-sm text-muted-foreground">

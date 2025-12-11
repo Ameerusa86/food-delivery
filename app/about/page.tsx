@@ -1,7 +1,7 @@
 // app/about/page.tsx
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-5xl px-4 py-16 lg:px-8 space-y-12">
+    <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8 space-y-8">
       <div className="text-center space-y-4 max-w-3xl mx-auto">
         <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl">
           About FoodieGo

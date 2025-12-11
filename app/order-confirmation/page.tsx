@@ -4,7 +4,8 @@ import Link from "next/link";
 
 export default function OrderConfirmationPage() {
   return (
-    <div className="mx-auto flex max-w-md flex-col items-center gap-4 px-4 py-16 text-center">
+    <div className="flex min-h-[60vh] flex-col items-center justify-center px-4 py-12">
+      <div className="flex flex-col items-center gap-4 max-w-md text-center">
       <div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
         <span className="text-3xl">✅</span>
       </div>

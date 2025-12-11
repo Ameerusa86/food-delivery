@@ -1,7 +1,7 @@
 // app/privacy/page.tsx
 export default function PrivacyPage() {
   return (
-    <div className="mx-auto max-w-3xl px-4 py-10 space-y-6 text-sm">
+    <div className="mx-auto max-w-7xl px-4 py-8 lg:px-8 space-y-8 text-sm">
       <div className="space-y-2">
         <h1 className="text-3xl font-semibold tracking-tight">
           Privacy Policy

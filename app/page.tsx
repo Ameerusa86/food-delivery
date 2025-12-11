@@ -7,11 +7,11 @@ import Image from "next/image";
 
 export default function HomePage() {
   return (
-    <div className="space-y-16 pb-16">
+    <div className="space-y-12">
       {/* Hero */}
       <section className="relative overflow-hidden bg-linear-to-b from-primary/5 via-background to-background">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,var(--tw-gradient-stops))] from-primary/10 via-transparent to-transparent" />
-        <div className="relative mx-auto max-w-7xl px-4 py-16 lg:px-8 lg:py-24">
+        <div className="relative mx-auto max-w-7xl px-4 py-12 lg:px-8 lg:py-16">
           <div className="flex flex-col items-center gap-12 text-center lg:flex-row lg:items-center lg:text-left">
             <div className="flex-1 space-y-6">
               <div className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-2 text-sm font-medium text-primary">
@@ -133,7 +133,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured restaurants */}
-      <section className="mx-auto max-w-7xl px-4 lg:px-8 space-y-8">
+      <section className="mx-auto max-w-7xl px-4 py-8 lg:px-8 space-y-8">
         <div className="flex items-end justify-between">
           <div className="space-y-1">
             <h2 className="text-3xl font-bold tracking-tight">

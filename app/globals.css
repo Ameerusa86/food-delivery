@@ -154,6 +154,7 @@
   }
   body {
     @apply bg-background text-foreground antialiased;
+    line-height: 1.6;
   }
 
   /* Enhanced typography */
@@ -163,7 +164,15 @@
   h4,
   h5,
   h6 {
-    @apply font-semibold tracking-tight;
+    @apply font-semibold tracking-tight leading-tight;
+  }
+
+  h1 {
+    @apply leading-snug;
+  }
+
+  p {
+    @apply leading-relaxed;
   }
 
   /* Smooth transitions */
