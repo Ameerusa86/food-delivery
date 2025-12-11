@@ -45,28 +45,48 @@ export default function RestaurantsPage() {
   }, [search, sort]);
 
   return (
-    <div className="mx-auto max-w-6xl px-4 py-8 space-y-6">
-      <div className="space-y-2">
-        <h1 className="text-2xl font-semibold tracking-tight">
+    <div className="mx-auto max-w-7xl px-4 py-12 lg:px-8 space-y-8">
+      <div className="space-y-3">
+        <h1 className="text-4xl font-bold tracking-tight">
           Restaurants near you
         </h1>
-        <p className="text-sm text-muted-foreground">
-          Browse by cuisine, rating, delivery time, and more.
+        <p className="text-lg text-muted-foreground">
+          Browse by cuisine, rating, delivery time, and more. Discover your next
+          favorite restaurant.
         </p>
       </div>
 
       <RestaurantFilterBar onSearchChange={setSearch} onSortChange={setSort} />
 
-      <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((r) => (
           <RestaurantCard key={r.id} restaurant={r} />
         ))}
       </div>
 
       {filtered.length === 0 && (
-        <p className="text-sm text-muted-foreground">
-          No restaurants match your search.
-        </p>
+        <div className="text-center py-16 space-y-3">
+          <div className="mx-auto w-16 h-16 rounded-full bg-muted flex items-center justify-center">
+            <svg
+              className="h-8 w-8 text-muted-foreground"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
+          </div>
+          <h3 className="text-lg font-semibold">No restaurants found</h3>
+          <p className="text-sm text-muted-foreground">
+            Try adjusting your search or filters to find what you're looking
+            for.
+          </p>
+        </div>
       )}
     </div>
   );

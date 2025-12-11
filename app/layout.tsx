@@ -1,16 +1,26 @@
 // app/layout.tsx
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { CartProvider } from "@/lib/cart-store";
 import { Navbar } from "@/components/ui/layout/navbar";
 import { Footer } from "@/components/ui/layout/footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
 
 export const metadata: Metadata = {
-  title: "FoodieGo",
-  description: "Delicious food delivered to your door.",
+  title: "FoodieGo - Delicious Food Delivered Fast",
+  description:
+    "Order from the best local restaurants. Fast delivery, great food, amazing experience.",
 };
 
 export default function RootLayout({
@@ -21,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.className} min-h-screen bg-muted text-foreground`}
+        className={`${plusJakarta.className} ${plusJakarta.variable} ${inter.variable} min-h-screen bg-background text-foreground`}
       >
         <CartProvider>
           <div className="flex min-h-screen flex-col">
