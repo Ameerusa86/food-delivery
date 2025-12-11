@@ -23,9 +23,9 @@ export default function HomePage() {
               </div>
 
               <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                Your favorite food,{" "}
+                Your favorite food delivered,{" "}
                 <span className="bg-linear-to-r from-primary via-primary/90 to-primary/70 bg-clip-text text-transparent">
-                  delivered <span className="text-primary">fast</span>
+                  <span className="text-primary font-bold">Fast</span>
                 </span>
               </h1>
 
