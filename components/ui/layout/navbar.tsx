@@ -25,73 +25,108 @@ export function Navbar() {
   const [isRegisterOpen, setIsRegisterOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3">
+    <header className="sticky top-0 z-50 border-b bg-card/80 backdrop-blur-xl shadow-sm">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 lg:px-8">
         {/* Left: logo + desktop nav */}
-        <div className="flex items-center gap-6">
-          <Link href="/" className="flex items-center gap-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-foreground">
+        <div className="flex items-center gap-8">
+          <Link href="/" className="flex items-center gap-2.5 group">
+            <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-linear-to-br from-primary to-primary/80 text-base font-bold text-primary-foreground shadow-lg shadow-primary/20 transition-all group-hover:shadow-xl group-hover:shadow-primary/30 group-hover:scale-105">
               FG
             </div>
-            <span className="text-base font-semibold tracking-tight">
+            <span className="text-xl font-bold tracking-tight bg-linear-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
               FoodieGo
             </span>
           </Link>
 
-          <nav className="hidden md:flex md:items-center md:gap-4 text-sm text-muted-foreground">
-            <Link href="/restaurants" className="hover:text-foreground">
+          <nav className="hidden lg:flex lg:items-center lg:gap-1 text-sm font-medium">
+            <Link
+              href="/restaurants"
+              className="px-3 py-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
+            >
               Restaurants
             </Link>
-            <Link href="/orders" className="hover:text-foreground">
+            <Link
+              href="/orders"
+              className="px-3 py-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
+            >
               Orders
             </Link>
-            <Link href="/about" className="hover:text-foreground">
+            <Link
+              href="/about"
+              className="px-3 py-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
+            >
               About
             </Link>
-            <Link href="/help" className="hover:text-foreground">
+            <Link
+              href="/help"
+              className="px-3 py-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-all"
+            >
               Help
             </Link>
           </nav>
         </div>
 
         {/* Center: search (desktop) */}
-        <div className="hidden flex-1 md:block">
-          <div className="mx-auto max-w-md">
+        <div className="hidden flex-1 lg:block max-w-xl">
+          <div className="relative">
             <input
-              className="w-full rounded-full border bg-background px-4 py-2 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
-              placeholder="Search for restaurants or dishes"
+              className="w-full rounded-xl border border-input bg-background/50 backdrop-blur-sm px-4 py-2.5 pl-10 text-sm shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 focus-visible:border-primary transition-all"
+              placeholder="Search for restaurants or dishes..."
             />
+            <svg
+              className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
           </div>
         </div>
 
         {/* Right: auth + cart */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           {/* Desktop buttons */}
-          <div className="hidden items-center gap-2 md:flex">
+          <div className="hidden items-center gap-2 lg:flex">
             <Button
-              variant="outline"
+              variant="ghost"
               size="sm"
               onClick={() => setIsLoginOpen(true)}
+              className="font-medium"
             >
               Log in
             </Button>
-            <Button size="sm" onClick={() => setIsRegisterOpen(true)}>
+            <Button
+              size="sm"
+              onClick={() => setIsRegisterOpen(true)}
+              className="font-medium shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30"
+            >
               Sign up
             </Button>
-            <Button variant="ghost" size="icon">
+            <Button variant="outline" size="icon" className="relative ml-1">
               <ShoppingBag className="h-5 w-5" />
+              <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
+                0
+              </span>
             </Button>
           </div>
 
           {/* Mobile buttons */}
-          <div className="flex items-center gap-2 md:hidden">
-            <Button variant="ghost" size="icon">
+          <div className="flex items-center gap-2 lg:hidden">
+            <Button variant="outline" size="icon" className="relative">
               <ShoppingBag className="h-5 w-5" />
+              <span className="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-primary-foreground">
+                0
+              </span>
             </Button>
             <Button
               variant="outline"
               size="icon"
-              className="md:hidden"
               onClick={() => setIsMobileOpen(true)}
             >
               <Menu className="h-5 w-5" />
