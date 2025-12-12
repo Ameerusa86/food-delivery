@@ -42,8 +42,8 @@ export default function RestaurantsPage() {
   }, [search, cuisineFilter]);
 
   return (
-    <div className="space-y-6">
-      <section className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+    <div className="space-y-8 p-8">
+      <section className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-wide text-muted-foreground">
             Restaurants
@@ -58,7 +58,7 @@ export default function RestaurantsPage() {
       </section>
 
       <Card>
-        <CardHeader className="flex flex-col gap-3 space-y-0 border-b pb-3 sm:flex-row sm:items-center sm:justify-between">
+        <CardHeader className="flex flex-col gap-3 space-y-0 border-b pb-4 pt-5 px-6 sm:flex-row sm:items-center sm:justify-between">
           <CardTitle className="text-sm">Restaurants</CardTitle>
 
           <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
@@ -92,7 +92,7 @@ export default function RestaurantsPage() {
           </div>
         </CardHeader>
 
-        <CardContent className="grid gap-4 py-4 md:grid-cols-2 xl:grid-cols-3">
+        <CardContent className="grid gap-5 py-6 px-6 md:grid-cols-2 xl:grid-cols-3">
           {filtered.length === 0 ? (
             <p className="col-span-full py-4 text-center text-xs text-muted-foreground">
               No restaurants match this filter.

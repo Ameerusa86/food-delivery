@@ -123,9 +123,9 @@ export default function AdminPage() {
     useState<Timeframe>("7 days");
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-8 p-8">
       {/* Header */}
-      <section className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+      <section className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-wide text-muted-foreground">
             Overview
@@ -160,7 +160,7 @@ export default function AdminPage() {
       </section>
 
       {/* Stat cards */}
-      <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <section className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         {statCards.map((card) => (
           <Card key={card.label} className="shadow-sm">
             <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-2">
@@ -196,7 +196,7 @@ export default function AdminPage() {
       </section>
 
       {/* Main grid */}
-      <section className="grid gap-6 lg:grid-cols-[2fr,1.3fr]">
+      <section className="grid gap-6 lg:grid-cols-[2fr,1.3fr] mt-2">
         {/* Recent orders */}
         <Card className="overflow-hidden">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 border-b py-3">

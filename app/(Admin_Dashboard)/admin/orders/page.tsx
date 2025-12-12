@@ -107,8 +107,8 @@ export default function OrdersPage() {
   }, [search, statusFilter]);
 
   return (
-    <div className="space-y-6">
-      <section className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+    <div className="space-y-8 p-8">
+      <section className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="text-xs uppercase tracking-wide text-muted-foreground">
             Orders
@@ -123,7 +123,7 @@ export default function OrdersPage() {
       </section>
 
       <Card>
-        <CardHeader className="flex flex-col gap-3 space-y-0 border-b pb-3 sm:flex-row sm:items-center sm:justify-between">
+        <CardHeader className="flex flex-col gap-3 space-y-0 border-b pb-4 pt-5 px-6 sm:flex-row sm:items-center sm:justify-between">
           <CardTitle className="text-sm">Orders</CardTitle>
 
           <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:items-center">
