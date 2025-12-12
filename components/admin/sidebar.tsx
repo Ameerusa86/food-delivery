@@ -43,6 +43,11 @@ export const adminNavItems: NavItem[] = [
     icon: <Users className="h-4 w-4" />,
   },
   {
+    label: "Client Site",
+    href: "/",
+    icon: <ChartPie className="h-4 w-4" />,
+  },
+  {
     label: "Settings",
     href: "/admin/settings",
     icon: <Settings className="h-4 w-4" />,
@@ -68,7 +73,7 @@ export function AdminSidebar() {
       </div>
 
       <ScrollArea className="flex-1">
-        <nav className="flex flex-col gap-1 px-3 py-4">
+        <nav className="flex flex-col gap-2 px-4 py-6">
           {adminNavItems.map((item) => {
             const isActive =
               item.href === "/admin"
@@ -78,20 +83,24 @@ export function AdminSidebar() {
             return (
               <Button
                 key={item.href}
-                variant={isActive ? "secondary" : "ghost"}
+                variant="ghost"
                 size="sm"
                 asChild
-                className={`justify-start gap-2 px-3 ${
+                className={`justify-start gap-3 px-4 py-6 rounded-lg ${
                   isActive
-                    ? "bg-sidebar-primary text-sidebar-primary-foreground hover:bg-sidebar-primary/90"
+                    ? "bg-red-500 text-white hover:bg-red-600"
                     : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
                 }`}
               >
                 <a href={item.href}>
-                  <span className="flex h-7 w-7 items-center justify-center rounded-md bg-sidebar-accent/70">
+                  <span
+                    className={`flex h-5 w-5 items-center justify-center ${
+                      isActive ? "text-white" : ""
+                    }`}
+                  >
                     {item.icon}
                   </span>
-                  <span className="text-sm">{item.label}</span>
+                  <span className="text-sm font-medium">{item.label}</span>
                 </a>
               </Button>
             );
