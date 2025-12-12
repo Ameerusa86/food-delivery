@@ -81,7 +81,6 @@ export default function OrdersPage(): JSX.Element {
       try {
         const response = await fetch(`/api/admin/orders?${queryString}`);
         if (!response.ok) {
-          // eslint-disable-next-line no-console
           console.error("Failed to load orders", response.statusText);
           return;
         }
@@ -94,7 +93,6 @@ export default function OrdersPage(): JSX.Element {
         setData(json.data);
         setPageCount(json.totalPages || 1);
       } catch (error) {
-        // eslint-disable-next-line no-console
         console.error("Failed to load orders", error);
       } finally {
         if (!cancel) {

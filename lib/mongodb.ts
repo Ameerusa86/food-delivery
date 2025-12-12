@@ -1,5 +1,5 @@
 // lib/mongodb.ts
-import { MongoClient, Db, Collection } from "mongodb";
+import { MongoClient, Db, Collection, Document } from "mongodb";
 
 const uri = process.env.MONGODB_URI;
 const dbName = process.env.MONGODB_DB;
@@ -35,7 +35,7 @@ export async function getDb(): Promise<Db> {
   return connectedClient.db(dbName);
 }
 
-export async function getCollection<TSchema>(
+export async function getCollection<TSchema extends Document>(
   name: string
 ): Promise<Collection<TSchema>> {
   const db = await getDb();

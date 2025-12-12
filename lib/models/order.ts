@@ -1,4 +1,4 @@
-// lib/models/order.ts
+import { Document } from "mongodb";
 
 export const orderStatusValues = [
   "DELIVERED",
@@ -10,7 +10,7 @@ export const orderStatusValues = [
 export type OrderStatus = (typeof orderStatusValues)[number];
 
 // Document as it exists in MongoDB
-export type OrderDocument = {
+export type OrderDocument = Document & {
   _id: string;
   orderNumber: string;
   restaurantName: string;
