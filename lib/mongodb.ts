@@ -35,7 +35,7 @@ export async function getDb(): Promise<Db> {
   return connectedClient.db(dbName);
 }
 
-export async function getCollection<TSchema extends Document>(
+export async function getCollection<TSchema extends Document = Document>(
   name: string
 ): Promise<Collection<TSchema>> {
   const db = await getDb();
